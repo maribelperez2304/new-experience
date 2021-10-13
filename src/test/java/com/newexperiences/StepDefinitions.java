@@ -20,19 +20,19 @@ public class StepDefinitions {
 
     @Before
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "driver/chrome-driver-81.0.4044.69.exe");
+        System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
         webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
     }
 
-    @Given("Abre http://automationpractice.com/index.php?controller=authentication")
-    public void open_google_com() {
+    @Given("Abre automationpractice.com")
+    public void openAutomationpractice() {
         webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         webDriver.get(baseUrl+"/index.php?controller=authentication");
     }
 
-    @When("Ingresa email {string} y {string}")
-    public void entering_number_and(String email, String password) {
+    @When("^Ingresa email {string} y {string}")
+    public void enterEmailAndPass(String email, String password) {
         WebElement textBoxEmail = webDriver.findElement(By.id("email"));
         WebElement textBoxPassword = webDriver.findElement(By.id("passwd"));
 
@@ -41,8 +41,8 @@ public class StepDefinitions {
 
     }
 
-    @When("Preciona SING IN")
-    public void press_enter() {
+    @When("Presiona SIGN IN")
+    public void pressButton() {
         WebElement signInButton = webDriver.findElement(new By.ById("SubmitLogin"));
         signInButton.click();
     }

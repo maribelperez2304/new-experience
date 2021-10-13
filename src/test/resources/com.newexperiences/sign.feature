@@ -2,10 +2,10 @@ Feature: Iniciar sesion en http://automationpractice.com/
 
 
   Scenario Outline: Autenticacion fallida
-    Given Abre http://automationpractice.com/index.php?controller=authentication
-    When Ingresa email <email> y <password>
-    And Presiona SIGN IN
-    Then Muestra mensaje <result>
+    Given que el usuario ingrese a automationpractice.com
+    When ingrese en el campo email <email> y en el campo contraseña ingrese <password>
+    And presione SIGN IN
+    Then el sistema muestra mensaje <result>
 
     Examples:
       | email               | password | result                                 |
