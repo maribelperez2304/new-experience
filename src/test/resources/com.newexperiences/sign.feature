@@ -1,10 +1,10 @@
-Feature: Iniciar session en http://automationpractice.com/
+Feature: Iniciar sesion en http://automationpractice.com/
 
 
   Scenario Outline: Autenticacion fallida
     Given Abre http://automationpractice.com/index.php?controller=authentication
     When Ingresa email <email> y <password>
-    And Preciona SING IN
+    And Presiona SIGN IN
     Then Muestra mensaje <result>
 
     Examples:
